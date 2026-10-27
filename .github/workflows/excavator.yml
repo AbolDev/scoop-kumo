@@ -8,11 +8,14 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   excavate:
     runs-on: windows-latest
     steps:
+      - uses: actions/checkout@v4
+
       - uses: ScoopInstaller/GithubActions@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
